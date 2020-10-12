@@ -52,7 +52,8 @@ for line in fileinput.input():
 alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
 
 # Obtener las llaves y texto plano, limpiando el input
-key = lines[0].replace("\n","")
+#key = lines[0].replace("\n","")
+key = "ENCRYPT"
 text = lines[1].replace(" ","") 
 text = text.replace("\n","")
 
