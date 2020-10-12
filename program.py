@@ -5,7 +5,7 @@ def crearCuadro(alph, key):
     cuadro = {}
     for i in range (0,5):
         for j in range (0,5):
-            if i + j < len(key):
+            if len(key) > 0:
                 cuadro[key[0]]="{}{}".format(i,j)
                 alph = alph.replace(key[0],"")
                 key = key[1:]
