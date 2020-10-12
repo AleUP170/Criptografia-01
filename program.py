@@ -46,6 +46,6 @@ text = text.replace("\n","")
 # Algoritmo
 cuadro = crearCuadro(alphabet, key)
 cif = convTextClaro(cuadro, text)
-cif = 
+cif = genPares(cif)
 print(cif)
 print(key, text)
