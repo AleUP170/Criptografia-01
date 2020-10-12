@@ -35,9 +35,12 @@ def genPares(cifrado):
 def cifrarPares(cifrado, cuadro):
     textCif = ""
     x = 0
+    lista_llaves = list(cuadro.keys())
+    lista_val = list(cuadro.values())
+
     while x < len(cifrado):
-        par = int(cifrado[x]+cifrado[x+1])
-        textCif += cuadro.index(par)
+        par = cifrado[x]+cifrado[x+1]
+        textCif += lista_llaves[lista_val.index(par)]
         x+=2
     return textCif
 
