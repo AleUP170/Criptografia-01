@@ -47,7 +47,7 @@ def cifrarPares(cifrado, cuadro):
 # Para decifrar, genera pares dividiendo los números a la mitad
 def paresDecif(decif):
     listPar = ["",""]
-    split = int(len(decif)/2
+    split = int(len(decif)/2)
     parCif = ""
     listPar[0] = decif[:split]
     listPar[1] = decif[split:]
