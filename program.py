@@ -14,6 +14,13 @@ def crearCuadro(alph, key):
                 alph = alph[1:]
     return cuadro
 
+# Convierte texto a números
+def convTextClaro(cuadro, texto):
+    textCif = ""
+    for x in texto:
+        textCif.append(cuadro[x])
+    return textCif
+
 # Lee entradas
 lines = []
 for line in fileinput.input():
@@ -21,10 +28,13 @@ for line in fileinput.input():
 
 alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
 
-#Obtener las llaves y texto plano, limpiando el input
+# Obtener las llaves y texto plano, limpiando el input
 key = lines[0].replace("\n","")
 text = lines[1].replace(" ","") 
 text = text.replace("\n","")
 
-print(crearCuadro(alphabet, key))
+# Algoritmo
+cuadro = crearCuadro(alphabet, key)
+cif = convTextClaro(cuadro, text)
+print(cif)
 print(key, text)
