@@ -24,7 +24,7 @@ def convTextClaro(cuadro, texto):
 # Genera cadena de números tomando pares
 def genPares(cifrado):
     nuevCif = ["",""]
-    for x in len(cifrado):
+    for x in range(0,len(cifrado)):
         if x%2 == 0:
             nuevCif[0]+=cifrado[x]
         else: 
