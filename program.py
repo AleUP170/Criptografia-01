@@ -47,7 +47,7 @@ def cifrarPares(cifrado, cuadro):
 # Para decifrar, genera pares dividiendo los números a la mitad
 def paresDecif(decif):
     listPar = ["",""]
-    split = len(decif)/2
+    split = int(len(decif)/2)
     parCif = ""
     listPar[0] = decif[:split]
     listPar[1] = decif[split:]
@@ -83,7 +83,7 @@ text = text.replace("\n","")
 
 # Algoritmo
 cuadro = crearCuadro(alphabet, key)
-if mode == "ENCRYPT":
-    print(cifrar(text, cuadro))
-elif mode == "DECRYPT":
-    print(decifrar(text, cuadro))
+#if mode == "ENCRYPT":
+print(cifrar(text, cuadro))
+#elif mode == "DECRYPT":
+#print(decifrar(text, cuadro))
