@@ -29,7 +29,17 @@ def genPares(cifrado):
             nuevCif[0]+=cifrado[x]
         else: 
             nuevCif[1]+=cifrado[x]
-    return nuevCif
+    return nuevCif[0]+nuevCif[1]
+
+# Toma los pares y genera texto cifrado
+def cifrarPares(cifrado, cuadro):
+    textCif = ""
+    x = 0
+    while x < len(cifrado):
+        par = int(cifrado[x]+cifrado[x+1])
+        textCif += cuadro.index(par)
+        x+=2
+    return textCif
 
 # Lee entradas
 lines = []
@@ -48,4 +58,3 @@ cuadro = crearCuadro(alphabet, key)
 cif = convTextClaro(cuadro, text)
 cif = genPares(cif)
 print(cif)
-print(key, text)
