@@ -18,7 +18,7 @@ def crearCuadro(alph, key):
 def convTextClaro(cuadro, texto):
     textCif = ""
     for x in texto:
-        textCif.append(cuadro[x])
+        textCif+=cuadro[x]
     return textCif
 
 # Lee entradas
