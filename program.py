@@ -44,6 +44,30 @@ def cifrarPares(cifrado, cuadro):
         x+=2
     return textCif
 
+# Para decifrar, genera pares dividiendo los números a la mitad
+def paresDecif(decif):
+    listPar = ["",""]
+    split = len(decif)/2
+    parCif = ""
+    listPar[0] = decif[:split]
+    listPar[1] = decif[split:]
+    for x in range (0, split):
+        parCif += listPar[0][x] + listPar[1][x]
+    return parCif
+
+# Cifrado
+def cifrar(texto, cuadro):
+    cif = convTextClaro(cuadro, texto)
+    cif = genPares(cif)
+    cif = cifrarPares(cif, cuadro)
+
+# Decifrado
+def decifrar(texto, cuadro):
+    decif = convTextClaro(cuadro, texto)
+    decif = paresDecif(decif)
+    decif = cifrarPares(decif, cuadro)
+    return decif
+
 # Lee entradas
 lines = []
 for line in fileinput.input():
@@ -52,14 +76,13 @@ for line in fileinput.input():
 alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
 
 # Obtener las llaves y texto plano, limpiando el input
-#key = lines[0].replace("\n","")
 key = "ENCRYPT"
 text = lines[1].replace(" ","") 
 text = text.replace("\n","")
 
 # Algoritmo
 cuadro = crearCuadro(alphabet, key)
-cif = convTextClaro(cuadro, text)
-cif = genPares(cif)
-cif = cifrarPares(cif, cuadro)
-print(cif)
+if key == "ENCRYPT":
+    print(cifrar(text, cuadro))
+elif key == "DECRYPT":
+    print(decifrar(text, cuadro))
