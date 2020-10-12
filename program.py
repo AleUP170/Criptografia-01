@@ -84,7 +84,7 @@ text = text.replace("\n","")
 
 # Algoritmo
 cuadro = crearCuadro(alphabet, key)
-#if mode == "ENCRYPT":
-print(cifrar(text, cuadro))
-#elif mode == "DECRYPT":
-#print(decifrar(text, cuadro))
+if mode == "ENCRYPT":
+    print(cifrar(text, cuadro))
+elif mode == "DECRYPT":
+    print(decifrar(text, cuadro))
