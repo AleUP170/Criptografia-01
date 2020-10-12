@@ -6,7 +6,7 @@ def crearCuadro(alph, key):
     for i in range (0,len(key)):
         cuadro[key[i]] = i
         alph.replace(key[i],"")
-    for i in range (0,26-len(key)):
+    for i in range (len(key), 26):
         cuadro[alph[i]] = i    
     return cuadro
 
