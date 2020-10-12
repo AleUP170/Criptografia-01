@@ -7,8 +7,10 @@ def crearCuadro(alph, key):
         for j in range (0,5):
             if i + j < len(key):
                 cuadro[key[i+j]]="{}{}".format(i,j)
-            elif alph[i+j] not in cuadro:
-                cuadro[alph[i+j]]="{}{}".format(i,j)
+                alph.replace(key[i+j],"")
+            else:
+                cuadro[0]="{}{}".format(i,j)
+                alph = alph[1:]
     return cuadro
 
 # Lee entradas
