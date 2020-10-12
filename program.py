@@ -6,8 +6,9 @@ def crearCuadro(alph, key):
     for i in range (0,5):
         for j in range (0,5):
             if i + j < len(key):
-                cuadro[key[i+j]]="{}{}".format(i,j)
-                alph = alph.replace(key[i+j],"")
+                cuadro[0]="{}{}".format(i,j)
+                alph = alph.replace(key[0],"")
+                key = key[1:]
             else:
                 cuadro[0]="{}{}".format(i,j)
                 alph = alph[1:]
