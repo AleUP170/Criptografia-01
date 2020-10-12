@@ -77,12 +77,13 @@ alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
 
 # Obtener las llaves y texto plano, limpiando el input
 key = "ENCRYPT"
+mode = lines[0].replace("\n","")
 text = lines[1].replace(" ","") 
 text = text.replace("\n","")
 
 # Algoritmo
 cuadro = crearCuadro(alphabet, key)
-if key == "ENCRYPT":
+if mode == "ENCRYPT":
     print(cifrar(text, cuadro))
-elif key == "DECRYPT":
+elif mode == "DECRYPT":
     print(decifrar(text, cuadro))
