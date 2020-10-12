@@ -21,6 +21,16 @@ def convTextClaro(cuadro, texto):
         textCif+=cuadro[x]
     return textCif
 
+# Genera cadena de números tomando pares
+def genPares(cifrado):
+    nuevCif = ["",""]
+    for x in len(cifrado):
+        if x%2 == 0:
+            nuevCif[0]+=cifrado[x]
+        else: 
+            nuevCif[1]+=cifrado[x]
+    return nuevCif
+
 # Lee entradas
 lines = []
 for line in fileinput.input():
@@ -36,5 +46,6 @@ text = text.replace("\n","")
 # Algoritmo
 cuadro = crearCuadro(alphabet, key)
 cif = convTextClaro(cuadro, text)
+cif = 
 print(cif)
 print(key, text)
